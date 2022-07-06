@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/responsimple.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/estilos.css" rel="stylesheet" type="text/css">
+    <title>Documentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container">
+        <div class="item logo"></div>
+        <div class="item">
+            <h1>
+                <a href="/"><%=title%></a>
+            </h1>
+        </div>
+        <article class="item">
+            <%if(data.length){%>
+                <table class="table">
+                    <tr>
+                        <th>Poster</th>
+                        <th>Título</th>
+                        <th>Año</th>
+                        <th>Puntuación</th>
+                        <th colspan="2">
+                            <form action="/agregar" method="GET">
+                                <input type="submit" class="button add" value="Agregar">
+                            </form>
+                        </th>
+                    </tr>
+                    <%data.forEach((movie)=>{%>
+                            <tr>
+                                <td class="center"><img src=<%=movie.img%> alt=""></td>
+                                <td><%=movie.title%></td>
+                                <td><%=movie.release_year%></td>
+                                <td><%=movie.rating%></td>
+                                <td>
+                                    <form action="/editar/<%=movie.movie_id%>" method="GET">
+                                        <input type="submit" class="button edit" value="Editar">
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/eliminar/<%=movie.movie_id%>" method="POST">
+                                        <input type="button" class="button delete" value="Eliminar" onclick="eliminar(this)">
+                                        <script>
+                                            function eliminar(input){
+                                                var deleteOk = confirm('¿Seguro que quiere eliminar esta película?');
+                                                return (deleteOk) ? input.parentNode.submit() : false;
+                                            }
+                                        </script>
+                                    </form>
+                                </td>
+                            </tr>
+                    <%});%>
+                </table>
+            <%}else{ %>
+                                <p class="Error">No muestra nada</p>
+            <%}%>
+        </article>
+    </section>
+</body>
+</html>

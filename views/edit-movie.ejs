@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/responsimple.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/estilos.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container">
+        <div class="item logo"></div>
+        <div class="item">
+            <h1>
+                <a href="/"><%=title%></a>
+            </h1>
+        <div class="item">
+            <form action="/actualizar/<%=data[0].movie_id%>" method="POST" class="form">
+                <fieldset>
+                    <div class="container n1 p1">
+                        <label class="item i-b v-top ph3 p_25 right" for="movie_id"> IMDB id:</label>
+                        <input class="item i-b v-top ph9 p_25" type="text" id="id" name="id" value="<%=data[0].movie_id%>" required disabled>
+                        <input type="hidden" id="movie_id" name="movie_id" value="<%=data[0].movie_id%>">
+                    </div>
+                    <div class="container n1 p1">
+                        <label class="item i-b v-top ph3 p_25 right" for="title"> Título:</label>
+                        <input class="item i-b v-top ph9 p_25" type="text" id="title" name="title" value="<%=data[0].title%>" required>
+                    </div>
+                    <div class="container n1 p1">
+                        <label class="item i-b v-top ph3 p_25 right" for="release_year"> Año:</label>
+                        <input class="item i-b v-top ph9 p_25" type="text" id="release_year" name="release_year" value="<%=data[0].release_year%>" required>
+                    </div>
+                    <div class="container n1 p1">
+                        <label class="item i-b v-top ph3 p_25 right" for="rating"> Calificación:</label>
+                        <input class="item i-b v-top ph9 p_25" type="text" id="rating" name="rating" value="<%=data[0].rating%>" required>
+                    </div>
+                    <div class="container n1 p1">
+                        <label class="item i-b v-top ph3 p_25 right" for="image"> Poster:</label>
+                        <input class="item i-b v-top ph9 p_25" type="text" id="image" name="image" value="<%=data[0].img%>" required>
+                    </div>
+                    <div class="container n1 p1">
+                        <input type="submit" class="button edit item ph4 mauto" value="Editar">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        </div>
+    </section>
+</body>
+</html>

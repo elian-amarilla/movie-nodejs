@@ -1,0 +1,58 @@
+html{
+    background-color: #F2F2F2;
+    font-family: 'Titillium Web', sans-serif;
+}
+a, h1, label {color:#658C88}
+input[type="button"], input[type="submit"]{ color: #fff;}
+a:hover{ opacity: .75;}
+h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    text-align: center;
+}
+fieldset{
+    padding: 1rem;
+    border: medium solid #8DA658;
+}
+.logo{
+    position: relative;
+    height: 150px;
+    background: url("../image/pelis.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+.error{
+    font-size: 2rem;
+    padding: 2rem;
+    background-color: #159A9C;
+    color: #FFF;
+}
+img{
+    max-height: 150px;
+    max-width: 150px;
+}
+.poster{max-width: 100px;}
+.table{
+    width: 100%;
+    font-size: 1.2em;
+}
+.table td, .table th{ 
+    padding: 1rem;
+    text-align: center;
+}
+.table th{
+    font-family: 'Oswald', sans-serif;
+}
+.table th .button{
+    font-family: 'Titillium Web', sans-serif;
+}
+.table tr:first-child{background-color: #292624;
+color: #159A9C;}
+.table tr:nth-child(even){ background-color: transparent;}
+.table tr:nth-child(odd):not(:first-child){background-color: #99BFBB;}
+.button:hover{ opacity: .75;}
+.add{background-color: #8DA658;}
+.edit{ background-color: #0871B2; }
+.delete{ background-color: #D23641;}
